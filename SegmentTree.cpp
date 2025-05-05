@@ -42,7 +42,6 @@ private:
             return;
         }
  
-        mid;
         if (idx < mid) {
             update(idx, val, LeftChild, l, mid);
         } else {
