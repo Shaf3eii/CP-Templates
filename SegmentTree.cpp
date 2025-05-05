@@ -1,27 +1,33 @@
-struct Node {
-    int sum;
- 
-    Node() {
-        sum = 0;
-    }
- 
-    Node(int val) {
-        sum = val;
-    }
- 
-    void change(int val) {
-        sum = val;
-    }
-};
- 
 struct SegmentTree {
-    int treeSize;
-    vector<Node> segData;
+#define LeftChild  (node * 2 + 1)
+#define RightChild (node * 2 + 2)
+#define mid        (l + r >> 1)
  
-    SegmentTree(int n) {
-        treeSize = 1;
-        while (treeSize < n) {treeSize *= 2;}
-        segData = vector<Node>(2 * treeSize);
+private:
+    struct Node {
+        int sum;
+        Node() : sum(0) {}
+        Node(int x) : sum(x) {}
+        void change(int x) {
+            sum = x;
+        }
+    };
+ 
+    vector<Node> segData;
+    int tree_size;
+ 
+    void build(vector<int>& arr, int node, int l, int r) {
+        if (r - l == 1) {
+            if (l < arr.size()) {
+                segData[node] = Node(arr[l]);
+            }
+            return;
+        }
+ 
+        build(arr, LeftChild, l, mid);
+        build(arr, RightChild, mid, r);
+ 
+        segData[node] = merge(segData[LeftChild], segData[RightChild]);
     }
  
     Node merge(Node& l, Node& r) {
@@ -30,42 +36,49 @@ struct SegmentTree {
         return ans;
     }
  
-    void set(int idx, int val, int node, int l, int r) {
+    void update(int idx, int val, int node, int l, int r) {
         if (r - l == 1) {
-            segData[node] = val;
+            segData[node].change(val);
             return;
         }
  
-        int mid = (l + r) / 2;
- 
+        mid;
         if (idx < mid) {
-            set(idx, val, node * 2 + 1, l, mid);
+            update(idx, val, LeftChild, l, mid);
         } else {
-            set(idx, val, node * 2 + 2, mid, r);
+            update(idx, val, RightChild, mid, r);
         }
  
-        segData[node] = merge(segData[node * 2 + 1], segData[node * 2 + 2]);
-    }
-    void set(int idx, int val) {
-        set(idx, val, 0, 0, treeSize);
+        segData[node] = merge(segData[LeftChild], segData[RightChild]);
     }
  
-    Node get(int l, int r, int node, int lf, int ri) {
-        if (lf >= l and ri <= r) {
-            return segData[node];
-        }
-        if (lf >= r or ri <= l) {
-            return Node();
-        }
+    Node query(int left, int right, int node, int l, int r) {
+        if (l >= left and r <= right) return segData[node];
+        if (l >= right or left >= r) return Node();
  
-        int mid = (lf + ri) / 2;
-        Node left = get(l, r, node * 2 + 1, lf, mid);
-        Node right = get(l, r, node * 2 + 2, mid, ri);
+        Node L = query(left, right, LeftChild, l, mid);
+        Node R = query(left, right, RightChild, mid, r);
  
-        return merge(left, right);
+        return merge(L, R);
     }
  
-    int get(int l, int r) {
-        return get(l, r, 0, 0, treeSize).sum;
+public:
+    SegmentTree(int n, vector<int>& arr) {
+        tree_size = 1;
+        while (tree_size < n) tree_size <<= 1;
+        segData = vector<Node>(2 * tree_size);
+        build(arr, 0, 0, tree_size);
     }
+ 
+    void update(int idx, int val) {
+        update(idx, val, 0, 0, tree_size);
+    }
+ 
+    int query(int left, int right) {
+        return query(left, right, 0, 0, tree_size).sum;
+    }
+ 
+#undef LeftChild
+#undef RightChild
+#undef mid
 };
