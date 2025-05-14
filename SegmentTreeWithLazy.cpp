@@ -94,4 +94,7 @@ public:
     int query(int l, int r) {
         return query(l, r, 0, 0, treeSize).sum;
     }
+#undef LeftChild
+#undef RightChild
+#undef mid
 };
