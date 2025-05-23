@@ -2,9 +2,9 @@ const int N = 1e6 + 5;
 int B1, B2, MOD1, MOD2;
 int pw1[N], pw2[N];
 
-struct Hash {
+struct DoubleHash {
 private:
-  vector<pair<int, int>> prefix, suffix;
+  vector<pair<int, int>> prefix;
   int n;
 
   void hash_prefix(const string &str) {
@@ -20,43 +20,15 @@ private:
     }
   }
 
-  void hash_suffix(const string &str) {
-    int h1 = 0, h2 = 0;
-    suffix.assign(n, {});
-    for (int i = n - 1; i >= 0; i--) {
-      h1 = (1LL * h1 * B1) % MOD1;
-      h1 = (h1 + str[i]) % MOD1;
-      h2 = (1LL * h2 * B2) % MOD2;
-      h2 = (h2 + str[i]) % MOD2;
-      suffix[i] = {h1, h2};
-    }
-  }
-
 public:
-  Hash() {}
+  DoubleHash() {}
 
-  Hash(const string &s) { build(s); }
+  DoubleHash(const string &s) { build(s); }
 
   void build(const string &s) {
     assert(B1);
     n = static_cast<long long>(s.size());
     hash_prefix(s);
-    // hash_suffix(s); /// we need this ?
-  }
-
-  pair<int, int> getSuffix(int l, int r) {
-    auto ret = suffix[l];
-    int len = r - l + 1;
-    r++;
-    if (r < n) {
-      ret.first -= 1LL * suffix[r].first * pw1[len] % MOD1;
-      if (ret.first < 0)ret.first += MOD1;
-
-      ret.second -= 1LL * suffix[r].second * pw2[len] % MOD2;
-      if (ret.second < 0)ret.second += MOD2;
-
-    }
-    return ret;
   }
 
   pair<int, int> getPrefix(int l, int r) {
