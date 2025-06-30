@@ -8,13 +8,14 @@ struct BinaryTrie {
         }
     };
     Node* root;
+    const int B = 30;
     BinaryTrie() {
         root = new Node();
-        insert(0); // remove this if not needed
+        insert(0);
     }
     void insert(int x) {
         Node* cur = root;
-        for (int i = 30; ~i; --i) {
+        for (int i = B; ~i; --i) {
             bool idx = (x >> i) & 1;
             if (cur->child[idx] == nullptr) {
                 cur->child[idx] = new Node();
@@ -34,17 +35,29 @@ struct BinaryTrie {
         }
     }
     void delete_(int x) {
-        del(x, 30, root);
+        del(x, B, root);
+    }
+
+    bool search(int x) {
+        Node* cur = root;
+        for (int i = B; ~i; --i) {
+            bool idx = (x >> i) & 1;
+            if (cur->child[idx] == nullptr) {
+                return false;
+            }
+            cur = cur->child[idx];
+        }
+        return true;
     }
 
     int query(int x) {
         Node* cur = root;
         int ret = 0;
-        for (int i = 30; ~i; --i) {
+        for (int i = B; ~i; --i) {
             bool idx = (x >> i) & 1;
             if (cur->child[idx ^ 1] != nullptr) {
                 cur = cur->child[idx ^ 1];
-                ret |= 1 << i;
+                ret |= (1 << i);
             } else {
                 cur = cur->child[idx];
             }
