@@ -6,7 +6,7 @@ bool is_prime(ll n) {
     if (n == 2) return true;
     
     // Check for divisibility by odd numbers starting from 3 up to sqrt(n)
-    for (int i = 3; i <= sqrt(n); i += 2) {
+    for (int i = 3; i * i <= (n); i += 2) {
         if (n % i == 0) return false;  // If n is divisible by i, it's not prime
     }
     
