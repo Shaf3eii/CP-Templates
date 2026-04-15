@@ -6,55 +6,58 @@ int check_kth_bit(int x, int k) {
   return (x >> k) & 1;
 }
 
-// Prints the positions of all set (1) bits in binary representation of x
-void print_on_bits(int x) {
-  for (int k = 0; k < 32; k++) {
-    if (check_kth_bit(x, k)) {
-      cout << k << ' '; // prints the position of the set bit
-    }
-  }
-  cout << '\n';
-}
-
-// Returns the count of set (1) bits in binary representation of x
-int count_on_bits(int x) {
-  int ans = 0;
-  for (int k = 0; k < 32; k++) {
-    if (check_kth_bit(x, k)) {
-      ans++;
-    }
-  }
-  return ans;
-}
-
-// Checks if x is even or odd
-bool is_even(int x) {
-  if (x & 1) {
-    return false;
-  }
-  else {
-    return true;
-  }
-}
-
 // Sets the kth bit of x to 1 and returns the result
 int set_kth_bit(int x, int k) {
-  return x | (1 << k);
+    return x | (1 << k);
 }
 
 // Sets the kth bit of x to 0 and returns the result
 int unset_kth_bit(int x, int k) {
-  return x & (~(1 << k));
+    return x & (~(1 << k));
 }
 
 // Toggles the kth bit of x and returns the result
 int toggle_kth_bit(int x, int k) {
-  return x ^ (1 << k);
+    return x ^ (1 << k);
 }
 
 // Checks if x is a power of 2
-bool check_power_of_2(int x) {
-  return count_on_bits(x) == 1;
+bool isPowerOfTwo(unsigned int n) {
+    return n && !(n & (n - 1));
+}
+bool isPowerOfTwo(int n) {
+    return n != 1 and __builtin_popcount(n) == 1;
+}
+
+// Clear all trailing ones and return the result
+int Clear_all_trailing_ones(int n){
+    return n&(n+1);
+}
+
+// Clear last set bit and return the result
+int Clear_last_set_bit(int n){
+    return n&(n-1);
+}
+
+// Count the no. 1s
+int count_set_bits(int n){
+    return __builtin_popcount(n);
+}
+
+// Check if n is divisible by power of 2 (k is the power of 2 -> k = 3 (2 ^ 3 -> 8))
+bool isDivisibleByPowerOf2(int n, int k) {
+    int powerOf2 = 1 << k;
+    return (n & (powerOf2 - 1)) == 0;
+}
+
+// Get the last set bit
+int Extract_last_bit(int n){
+    return n&-n;
+}
+
+// Set the right most cleared bit
+int Set_right_most_cleared_bit(int n){
+    return n|(n+1);
 }
 
 int main() {
@@ -94,13 +97,11 @@ int main() {
 
   cout << "Check 2nd bit of 11: " << check_kth_bit(x, 2) << '\n'; // Output: 0
   cout << "Set bits in 11 are at positions: ";
-  print_on_bits(x); // Output: 0 1 3
-  cout << "Number of set bits in 11: " << count_on_bits(x) << '\n'; // Output: 3
-  cout << "Is 11 even? " << is_even(x) << '\n'; // Output: 0 (false)
+  cout << "Number of set bits in 11: " << count_set_bits(x) << '\n'; // Output: 3
   cout << "11 after setting 2nd bit: " << set_kth_bit(x, 2) << '\n'; // Output: 15
   cout << "15 after unsetting 2nd bit: " << unset_kth_bit(15, 2) << '\n'; // Output: 11
   cout << "11 after toggling 3rd bit: " << toggle_kth_bit(x, 3) << '\n'; // Output: 3
-  cout << "Is 8 a power of 2: " << check_power_of_2(8) << '\n'; // Output: 1 (true)
+  cout << "Is 8 a power of 2: " << isPowerOfTwo(8) << '\n'; // Output: 1 (true)
 
   return 0;
 }

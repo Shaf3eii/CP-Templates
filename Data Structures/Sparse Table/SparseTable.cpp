@@ -1,8 +1,8 @@
 template<typename T, class CMP = function<T(const T &, const T &)>> 
 struct Sparse_Table {
-    int n;
-    CMP merge;
-    vector<vector<T>> sp;
+    int n;  // size of the array
+    CMP merge;  // merge function (min, max, gcd, etc.)
+    vector<vector<T>> sp; // sp[k][i] = result on range [i, i + 2^k - 1]
 
     Sparse_Table(const vector<T>& arr, const CMP &F) : merge(F) {
         n = arr.size();
@@ -17,7 +17,7 @@ struct Sparse_Table {
         }
     }
 
-    T query(int l, int r) {
+    T query(int l, int r) { // Query [l, r]
         int lg = __lg(r - l + 1);
         return merge(sp[lg][l], sp[lg][r - (1 << lg) + 1]);
     }

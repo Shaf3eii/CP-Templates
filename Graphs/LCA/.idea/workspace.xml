@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BackendCodeEditorMiscSettings">
+    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1da89f3c-f98f-472b-87bf-b65f15f47ad6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../BinaryTrie.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bitwise Operations.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bubble Sort.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Check Is Prime.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Combinatorics.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Coordinate_Compression.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Count Sort.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../D&amp;C Count Inversions.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DSU.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DoubleHashing.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FenwickTrees.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Get divisors.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Insertion Sort.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LIS O(NLogN).cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LazyPropagationSparseSegTree.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LinearSieve.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Monotonic Stack.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Naive Sieve.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Number of divisors.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PrefixSum2D.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PrimeFactorization.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SegmentTree.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SegmentTreeWithLazy.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Selection Sort.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SingleHashing.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SparseTable.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../String.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Trie.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../check_bipartite.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../fastPower.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../fstream.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../get diameter of tree.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../multiply String With Integer.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../prefixFrequency.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../subsets with masks.cpp" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="Iphlp7JL" />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2025" />
+    <option name="minorVersion" value="3.4" />
+    <option name="productBranch" value="Classic" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1,
+  "fromUser": false
+}]]></component>
+  <component name="ProjectId" id="3COpbHOCqhupHnQm6pnhtj4C8Ln" />
+  <component name="ProjectStatusUIService"><![CDATA[{
+  "uiKindId": "Widget"
+}]]></component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.RadMigrateCodeStyle": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "org.rust.first.attach.projects": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="RUN_TOOL" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1da89f3c-f98f-472b-87bf-b65f15f47ad6" name="Changes" comment="" />
+      <created>1776266542076</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1776266542076</updated>
+      <workItem from="1776266545327" duration="170000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
