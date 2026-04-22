@@ -1,10 +1,10 @@
 struct BinaryTrie {
     struct Node {
         Node* child[2];
-        int freq[2];
+        int freq;
         Node() {
             child[0] = child[1] = nullptr;
-            freq[0] = freq[1] = 0;
+            freq = 0;
         }
     };
     Node* root;
@@ -20,21 +20,21 @@ struct BinaryTrie {
             if (cur->child[idx] == nullptr) {
                 cur->child[idx] = new Node();
             }
-            cur->freq[idx]++;
             cur = cur->child[idx];
+            cur->freq++;
         }
     }
     void del(int x, int b, Node* cur) {
         if (b == -1) return;
         bool idx = (x >> b) & 1;
         del(x, b - 1, cur->child[idx]);
-        cur->freq[idx]--;
-        if (cur->freq[idx] == 0) {
+        cur->child[idx]->freq--;
+        if (cur->child[idx]->freq == 0) {
             delete cur->child[idx];
             cur->child[idx] = nullptr;
         }
     }
-    void delete_(int x) {
+    void del(int x) {
         del(x, B, root);
     }
 
@@ -50,7 +50,7 @@ struct BinaryTrie {
         return true;
     }
 
-    int query(int x) {
+    int maxXor(int x) {
         Node* cur = root;
         int ret = 0;
         for (int i = B; ~i; --i) {

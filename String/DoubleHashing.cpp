@@ -1,51 +1,36 @@
-mt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());
+constexpr int MOD1 = 1000000007, MOD2 = 1000000009, p1 = 133, p2 = 137;
+vector<int> pow1, pow2;
 
-template<typename T>
-T rand(T l, T r) {
-    return uniform_int_distribution<T>(l, r)(rng);
+void preCompute(int n) { // do not forget to call it !!
+    pow1.resize(n + 1), pow2.resize(n + 1);
+    pow1[0] = pow2[0] = 1;
+    for (int i = 1; i <= n; ++i) {
+        pow1[i] = (pow1[i - 1] * p1) % MOD1;
+        pow2[i] = (pow2[i - 1] * p2) % MOD2;
+    }
 }
 
 struct Hash {
-private:
-    const int mod1 = 1e9 + 7, mod2 = 1e9 + 9;
-    int base1, base2;
-    int n;
-    vector<int> pw1, pw2, hash1, hash2;
+    vector<int> hash1, hash2;
 
-    vector<int> hash(string &s, vector<int> &pw, const int mod) {
-        vector<int> res(n);
-        res[0] = (s[0] - 'a' + 1);
-        for (int i = 1; i < n; i++) {
-            res[i] = 1LL * (s[i] - 'a' + 1) * pw[i] % mod + res[i - 1];
-            if (res[i] >= mod) res[i] -= mod;
-        }
-        return res;
-    }
-    
-    int query(vector<int> &hash, vector<int> &pw, int l, int r, const int mod) {
-        int res = hash[r];
-        if (l > 0) res -= hash[l - 1];
-        if (res < 0) res += mod;
-        res = 1LL * res * pw[n - l] % mod;
-        return res;
-    }
-public:
-    Hash(string &s) {
-        n = s.size();
-        base1 = rand((int) 1e6, (int) 1e8);
-        base2 = rand((int) 1e6, (int) 1e8);
-        pw1.resize(n + 1), pw2.resize(n + 1);
-        pw1[0] = pw2[0] = 1;
-        for (int i = 1; i <= n; i++) {
-            pw1[i] = 1LL * base1 * pw1[i - 1] % mod1;
-            pw2[i] = 1LL * base2 * pw2[i - 1] % mod2;
-        }
-        hash1 = hash(s, pw1, mod1);
-        hash2 = hash(s, pw2, mod2);
+    Hash () {}
+
+    Hash(const string& s) {
+        int n = s.size();
+        hash1.resize(n + 1, 0), hash2.resize(n + 1, 0);
+        for (int i = 0; i < n; ++i) hash1[i + 1] = ((hash1[i] * p1) % MOD1 + (s[i] - 'a' + 1)) % MOD1; // 1-based
+        for (int i = 0; i < n; ++i) hash2[i + 1] = ((hash2[i] * p2) % MOD2 + (s[i] - 'a' + 1)) % MOD2; // 1-based
     }
 
-    long long get_hash(int l, int r) {
-        return 1LL * query(hash1, pw1, l, r, mod1) *
-               query(hash2, pw2, l, r, mod2);
+    pair<int, int> getHash(int l, int r) {
+        if (l > r) return {0, 0};
+        l += 1;
+        r += 1;
+        int len = r - l + 1;
+
+        int h1 = (hash1[r] - (hash1[l - 1] * 1ll * pow1[len]) % MOD1 + MOD1) % MOD1;
+        int h2 = (hash2[r] - (hash2[l - 1] * 1ll * pow2[len]) % MOD2 + MOD2) % MOD2;
+
+        return {h1, h2};
     }
 };
