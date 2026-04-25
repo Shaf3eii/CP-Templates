@@ -64,7 +64,7 @@ void Yarab_Nfr7(int testcase) {
     int n, k; cin >> n >> k;
     BinaryTrie trie;
     int pre = 0, ans = 0;
-    // insert prefixes and count the number of subarrays that 
+    // insert prefixes and count the number of subarrays that
     // pre_r ^ pre_l >= k
     for (int i = 0, x; i < n; ++i) {
         cin >> x;
