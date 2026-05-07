@@ -1,5 +1,5 @@
 ***
-### (a + b) = (a | b) + (a & b)
+### $(a + b) = (a \mid b) + (a \mathbin{\&} b)$
 ***
 **Bitwise Identities**
 - $a \mid b = (a \oplus b) + (a \mathbin{\&} b)$
@@ -21,5 +21,7 @@
 ***
 - **Subarray Bitwise AND:** The set of distinct bitwise AND results of all subarrays of an array (where $a_i \le n$) contains at most $\log_2(n)$ elements. _(This is because every time a running bitwise AND changes, it must turn off at least one bit, and a number $\le n$ has at most $\approx \log_2(n)$ bits)._
 ***
-- **XOR Inequality Property:** For any non-negative integers $x, y, z$ with $x < y < z$:    $$\min(x \oplus y, y \oplus z) < x \oplus z$$
+- **XOR Inequality Property:** For any non-negative integers $x, y, z$ with $x < y < z$:
+$$\min(x \oplus y, y \oplus z) < x \oplus z$$
 ***
+
