@@ -1,3 +1,17 @@
+struct Node {
+    Node *left{}, *right{};
+    int sum{};
+
+    Node() {}
+    Node(int val) : sum(val) {}
+    Node(Node *l, Node *r) {
+        left = l;
+        right = r;
+        if (left) sum += left->sum;
+        if (right) sum += right->sum;
+    }
+};
+
 struct PST {
     int n;
     vector<Node*> roots;
@@ -25,7 +39,7 @@ struct PST {
     }
 
     Node* update(Node* node, int l, int r, int idx, int val) {
-        if (l == r) return new Node(node->sum + val);
+        if (l == r) return new Node(node->sum + val); // if u accumulate on the node don't change this, if u set a new value to the node remove the old sum
         int mid = (l + r) / 2;
         if (idx <= mid)
             return new Node(update(node->left, l, mid, idx, val), node->right);
