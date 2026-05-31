@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Bitmasks.iml" filepath="$PROJECT_DIR$/.idea/Bitmasks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Segment Trees.iml" filepath="$PROJECT_DIR$/.idea/Segment Trees.iml" />
     </modules>
   </component>
 </project>
