@@ -3,11 +3,8 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="BackendCodeEditorMiscSettings">
-    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="29ac20e7-ac11-4ac0-aaac-4c96cd305653" name="Changes" comment="" />
+    <list default="true" id="117133fb-95c9-4fdb-a573-a37de21a3b66" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,9 +18,9 @@
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "customColor": "",
-  "associatedIndex": 2
+  "associatedIndex": 3
 }]]></component>
-  <component name="ProjectId" id="3Cu1iSsCSsqXPFlGgY9WIW1wI77" />
+  <component name="ProjectId" id="3EWviUBgIPlgMOozym1PVcNJDci" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -34,23 +31,25 @@
     "RunOnceActivity.RadMigrateCodeStyle": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "main",
+    "nodejs_package_manager_path": "npm",
     "org.rust.first.attach.projects": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="29ac20e7-ac11-4ac0-aaac-4c96cd305653" name="Changes" comment="" />
-      <created>1777220787063</created>
+      <changelist id="117133fb-95c9-4fdb-a573-a37de21a3b66" name="Changes" comment="" />
+      <created>1780307268596</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1777220787063</updated>
-      <workItem from="1777220810960" duration="32000" />
+      <updated>1780307268596</updated>
+      <workItem from="1780307270939" duration="6000" />
     </task>
     <servers />
   </component>
